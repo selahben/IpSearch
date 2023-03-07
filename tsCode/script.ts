@@ -7,6 +7,7 @@ async function getUserDetails() {
 }
 
 getUserDetails();
+
 function displayData(uaData: any) {
   console.log(uaData);
   let mainDiv = document.getElementById("main") as HTMLDivElement;

@@ -15,6 +15,8 @@ footer {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: white;
+  z-index: 2;
 }
 header {
   top: 0;
@@ -27,16 +29,21 @@ footer {
   bottom: 0;
   font-size: 3vh;
 }
+img {
+  width: 100px;
+  margin: 0 auto;
+}
 #main {
   height: 72vh;
   padding: 1vh;
   position: relative;
   top: 14vh;
-  display: flex;
+  overflow-y: scroll;
+  /* display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
-  justify-content: center;
+  justify-content: center; */
 }
 h3 {
   text-decoration: underline;

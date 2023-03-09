@@ -7,25 +7,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-export function getIp(ipOrUrlInput) {
-    return __awaiter(this, void 0, void 0, function* () {
-        let theData = yield fetch(`http://ip-api.com/json/${ipOrUrlInput}`).then((data) => data.json());
-        return theData.query;
-    });
-}
 export function getUserDetails1() {
     return __awaiter(this, void 0, void 0, function* () {
         let myUserAgent = window.navigator.userAgent;
-        //   console.log(myUserAgent);
         let theData = yield fetch(`https://api.apicagent.com?ua=${myUserAgent}`);
         return theData.json();
     });
 }
-export function getUserDetails2(ipOrUrl) {
+export function getUserDetails2(theIP) {
     return __awaiter(this, void 0, void 0, function* () {
         let param = "";
-        if (ipOrUrl) {
-            param = `&ip=${ipOrUrl}`;
+        if (theIP) {
+            param = `&ip=${theIP}`;
         }
         let theData = yield fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=7aa82fcd02f44192b966c5fc94ab4ed1${param}`);
         return theData.json();

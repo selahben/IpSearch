@@ -1,27 +1,29 @@
-import { getUserDetails2, getIp } from "./dataFunc.js";
+import { getUserDetails2 } from "./dataFunc.js";
+
+let $searchResults = document.getElementById("searchResults") as HTMLDivElement;
 
 (document.getElementById("searchMe") as HTMLFormElement).addEventListener(
   "click",
   (e) => {
     let searchFor = (document.getElementById("searchFor") as HTMLInputElement)
       .value;
-    getAllDetails(searchFor);
+    let searchForLength = searchFor.split(".").length;
+    console.log(searchForLength);
+    if (searchFor == "" || searchForLength == 4 || searchForLength == 6) {
+      getAllDetails(searchFor);
+    } else {
+      $searchResults.innerHTML = `<p style="color:red">ERROR! Not a valid IP!</p>`;
+    }
   }
 );
 
 async function getAllDetails(searchFor?: string) {
-  let theIP = await getIp(searchFor);
-  console.log(theIP);
-  let geoData = await getUserDetails2(theIP);
+  let geoData = await getUserDetails2(searchFor);
   displayData(geoData);
 }
 
 function displayData(geoData: any) {
   console.log(geoData);
-
-  let $searchResults = document.getElementById(
-    "searchResults"
-  ) as HTMLDivElement;
 
   let theUTC: string = geoData.time_zone.current_time;
   theUTC = theUTC.substring(theUTC.length - 5);

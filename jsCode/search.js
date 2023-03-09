@@ -7,23 +7,28 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { getUserDetails2, getIp } from "./dataFunc.js";
+import { getUserDetails2 } from "./dataFunc.js";
+let $searchResults = document.getElementById("searchResults");
 document.getElementById("searchMe").addEventListener("click", (e) => {
     let searchFor = document.getElementById("searchFor")
         .value;
-    getAllDetails(searchFor);
+    let searchForLength = searchFor.split(".").length;
+    console.log(searchForLength);
+    if (searchFor == "" || searchForLength == 4 || searchForLength == 6) {
+        getAllDetails(searchFor);
+    }
+    else {
+        $searchResults.innerHTML = `<p style="color:red">ERROR! Not a valid IP!</p>`;
+    }
 });
 function getAllDetails(searchFor) {
     return __awaiter(this, void 0, void 0, function* () {
-        let theIP = yield getIp(searchFor);
-        console.log(theIP);
-        let geoData = yield getUserDetails2(theIP);
+        let geoData = yield getUserDetails2(searchFor);
         displayData(geoData);
     });
 }
 function displayData(geoData) {
     console.log(geoData);
-    let $searchResults = document.getElementById("searchResults");
     let theUTC = geoData.time_zone.current_time;
     theUTC = theUTC.substring(theUTC.length - 5);
     theUTC = theUTC.substring(0, 3) + ":" + theUTC.substring(3);

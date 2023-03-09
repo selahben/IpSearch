@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { getUserDetails2, getIp } from "./dataFunc.js";
-// getAllDetails("google.com");
 document.getElementById("searchMe").addEventListener("click", (e) => {
     let searchFor = document.getElementById("searchFor")
         .value;

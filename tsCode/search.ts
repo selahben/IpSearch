@@ -1,7 +1,5 @@
 import { getUserDetails2, getIp } from "./dataFunc.js";
 
-// getAllDetails("google.com");
-
 (document.getElementById("searchMe") as HTMLFormElement).addEventListener(
   "click",
   (e) => {

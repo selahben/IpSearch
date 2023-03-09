@@ -22,7 +22,6 @@ footer {
 header {
   top: 0;
   padding-bottom: 2vh;
-  /* height: 14vh; */
 }
 h1 {
   font-size: 8vh;
@@ -48,7 +47,6 @@ h1 {
 footer {
   bottom: 0;
   font-size: 3vh;
-  /* height: 10vh; */
   padding: 1vh 0;
 }
 img {
@@ -62,11 +60,6 @@ img {
   position: relative;
   top: 23vh;
   overflow-y: scroll;
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center; */
 }
 h3 {
   text-decoration: underline;

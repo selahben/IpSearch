@@ -1,4 +1,3 @@
-//geo ip key: 7aa82fcd02f44192b966c5fc94ab4ed1
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,15 +7,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-//https://api.ipgeolocation.io/ipgeo?apiKey=7aa82fcd02f44192b966c5fc94ab4ed1
-// async function getUserDetails() {
-//   let myUserAgent = window.navigator.userAgent;
-//   console.log(myUserAgent);
-//   let theData = await fetch(`https://api.apicagent.com?ua=${myUserAgent}`)
-//     .then((response) => response.json())
-//     .then((data) => displayData(data));
-//   console.log(theData);
-// }
 export function getIp(ipOrUrlInput) {
     return __awaiter(this, void 0, void 0, function* () {
         let theData = yield fetch(`http://ip-api.com/json/${ipOrUrlInput}`).then((data) => data.json());

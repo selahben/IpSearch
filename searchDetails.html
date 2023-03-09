@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Agent</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./jsCode/search.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Search for Other Sites</h1>
+      <ul id="mainMenu">
+        <li><a href="./">My Details</a></li>
+        <span>|</span>
+        <li>
+          <a class="active" href="./searchDetails.html"
+            >Search by IP or URL</a
+          >
+        </li>
+      </ul>
+    </header>
+    <div id="mainSearch">
+        <div id="searchForm">
+            <!-- <p><label for="searchBy">Search By:</label>
+                <select name="searchBy" id="searchBy">
+                    <option value="byIP">IP</option>
+                    <option value="byURL">URL</option>
+                </select>
+            </p> -->
+            <p>
+                <label for="searchFor">Search For (IP / URL):</label>
+                <input type="text" name="searchFor" id="searchFor"></input>
+            </p>
+            
+            <input type="submit" value="Search" id="searchMe">
+        </div>
+        <div id="searchResults"></div>
+    </div>
+    <footer><p>All Rights Reserved!</p></footer>
+  </body>
+</html>

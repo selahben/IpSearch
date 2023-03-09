@@ -4,13 +4,14 @@
   box-sizing: border-box;
   font-family: cursive;
   text-align: center;
+  font-size: 3vh;
 }
 header,
 footer {
   box-shadow: 0 0 10px 0 #00000080;
   position: fixed;
-  height: 14vh;
   display: flex;
+  flex-direction: column;
   width: 100%;
   align-content: center;
   justify-content: center;
@@ -21,23 +22,45 @@ footer {
 header {
   top: 0;
   padding-bottom: 2vh;
+  /* height: 14vh; */
 }
 h1 {
-  font-size: 10vh;
+  font-size: 8vh;
+  margin-bottom: 3vh;
+}
+#mainMenu {
+  display: flex;
+  list-style-type: none;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 20px;
+}
+#mainMenu a {
+  text-decoration: none;
+  color: black;
+}
+#mainMenu a:hover,
+#mainMenu a.active {
+  text-decoration: underline;
+  color: green;
 }
 footer {
   bottom: 0;
   font-size: 3vh;
+  /* height: 10vh; */
+  padding: 1vh 0;
 }
 img {
   width: 100px;
   margin: 0 auto;
 }
-#main {
-  height: 72vh;
+#main,
+#mainSearch {
+  height: 71vh;
   padding: 1vh;
   position: relative;
-  top: 14vh;
+  top: 23vh;
   overflow-y: scroll;
   /* display: flex;
   flex-direction: column;
@@ -51,4 +74,12 @@ h3 {
 ul {
   margin-bottom: 10px;
   list-style-type: none;
+}
+
+#searchForm {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
 }

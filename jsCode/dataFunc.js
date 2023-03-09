@@ -17,6 +17,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 //     .then((data) => displayData(data));
 //   console.log(theData);
 // }
+export function getIp(ipOrUrlInput) {
+    return __awaiter(this, void 0, void 0, function* () {
+        let theData = yield fetch(`http://ip-api.com/json/${ipOrUrlInput}`).then((data) => data.json());
+        return theData.query;
+    });
+}
 export function getUserDetails1() {
     return __awaiter(this, void 0, void 0, function* () {
         let myUserAgent = window.navigator.userAgent;
@@ -25,9 +31,13 @@ export function getUserDetails1() {
         return theData.json();
     });
 }
-export function getUserDetails2() {
+export function getUserDetails2(ipOrUrl) {
     return __awaiter(this, void 0, void 0, function* () {
-        let theData = yield fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=7aa82fcd02f44192b966c5fc94ab4ed1`);
+        let param = "";
+        if (ipOrUrl) {
+            param = `&ip=${ipOrUrl}`;
+        }
+        let theData = yield fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=7aa82fcd02f44192b966c5fc94ab4ed1${param}`);
         return theData.json();
     });
 }

@@ -11,6 +11,13 @@
 //   console.log(theData);
 // }
 
+export async function getIp(ipOrUrlInput?: string) {
+  let theData = await fetch(`http://ip-api.com/json/${ipOrUrlInput}`).then(
+    (data) => data.json()
+  );
+  return theData.query;
+}
+
 export async function getUserDetails1() {
   let myUserAgent = window.navigator.userAgent;
   //   console.log(myUserAgent);
@@ -18,9 +25,13 @@ export async function getUserDetails1() {
   return theData.json();
 }
 
-export async function getUserDetails2() {
+export async function getUserDetails2(ipOrUrl?: string) {
+  let param: string = "";
+  if (ipOrUrl) {
+    param = `&ip=${ipOrUrl}`;
+  }
   let theData = await fetch(
-    `https://api.ipgeolocation.io/ipgeo?apiKey=7aa82fcd02f44192b966c5fc94ab4ed1`
+    `https://api.ipgeolocation.io/ipgeo?apiKey=7aa82fcd02f44192b966c5fc94ab4ed1${param}`
   );
   return theData.json();
 }
